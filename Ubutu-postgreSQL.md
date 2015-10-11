@@ -1,7 +1,5 @@
 # [UBUNTU-POSTGRESQL](https://help.ubuntu.com/community/PostgreSQL)
 
-[TOC]
-
 ## 머릿말[](Introduction)
 PostgreSQL은 강력한 객체 관계 데이터베이스 관리 시스템으로, 유연한 BSD 스타일 라이선스 하에 제공된다. PostgreSQL는 많은 진보된 기능을 포함하며, 매우 빠르고 표준을 준수한다.
 [](PostgreSQL is a powerful object-relational database management system, provided under a flexible BSD-style license.[1] PostgreSQL contains many advanced features, is very fast and standards compliant.)
@@ -118,7 +116,7 @@ PgAdmin은 완전하게 기능하려면 애드온 설치가 필요하다. "admin
  CREATE EXTENSION adminpack;
 ```
 
-## 다른 서버 설정 방법(쉬운 방법) <!--Alternative Server Setup-->
+## 다른 서버 설정 방법(쉬운 방법)
 같은 컴퓨터에서 데이터베이스에 연결하려고 한다면, 설정이 더 쉬워진다.
 [](If you don't intend to connect to the database from other machines, this alternative setup may be simpler.)
 우분투에서는 기본적으로, 같은 컴퓨터 내부에서 이루어지는 연결에는 'ident sameuser' 인증을 사용하게 설정되어 있다. 자세한 정보는 Postgresql 문서를 보라. 핵심만 간추리면, 우분투 사용자 이름이 'foo'인데 이 'foo'를 Postgresql 사용자로 추가하면, 그 데이터베이스에 연결할 때 암호가 필요 없다는 뜻이다.
@@ -197,11 +195,11 @@ sudo /etc/init.d/postgresql reload
 이 GUI로 데이터베이스를 만들고 관리하고, 쿼리하고, SQL을 실행할 수 있다.
 <!--With this GUI you may start creating and managing databases, query the database, execute SQl etc.-->
 
-## 서버 관리하기 <!--Managing the Server-->
+## 서버 관리하기
 [PostgreSQL 공식 문서](http://www.postgresql.org/docs/current/static/admin.html)를 보라.
 <!--To learn more about managing PostgreSQL (but without the Ubuntu specifics) see the official PostgreSQL documentation-->
 
-### 사용자와 권리 관리하기 <!--Managing users and rights-->
+### 사용자와 권한 관리하기
 사용자 관리는 [PostgreSQL 문서의 클라이언트 인증 챕터](http://www.postgresql.org/docs/current/static/client-authentication.html)에서 자세하게 논의한다. 다음은 시작을 위한 도입부이다. 사용자를 관리하려면, 먼저 `/etc/postgresql/current/main/pg_hba.conf` 를 열고 잠겨서 보안되고 있는 기본 설정을 수정해야 한다. 예를 들어, 만약 여러분이 postgres가 그 소유의 사용자들(시스템 사용자와 링크되어 있지 않다)을 관리하게 하고 싶다면, 아래의 내용을 추가할 것이다.
 <!--User management is discussed in detail in the client authentication chapter of the PostgreSQL documentation; the following is an introduction to get you started.
 To manage users, you first have to edit /etc/postgresql/current/main/pg_hba.conf and modify the default configuration which is very locked down and secure. For example, if you want postgres to manage its own users (not linked with system users), you will add the following line:-->
@@ -246,7 +244,7 @@ The first command line creates the user with no database creation rights (-D) wi
 This little example will probably suit most of your needs. For more details, please refer to the corresponding man pages or the online documentation.
 -->
 
-### 서버 재시작하기 <!--restarting the server-->
+### 서버 재시작하기
 네트워킹 설정 후에는 서버를 다시 가동할 필요가 있는데, 아래의 명령을 추천한다.
 <!--
 After configuring the networking / users you may need to reload the server, here is a suggested command to do so.
@@ -265,7 +263,7 @@ Some settings changes in postgresql.conf require a full restart, which will term
 sudo /etc/init.d/postgresql restart
 ```
 
-## 더 읽을 거리 <!-- Further reading -->
+## 더 읽을 거리
 여러분이 SQL에 친숙하지 않다면 이 강력한 언어를 연구하고 싶을 것이다. 비록 PostgreSQL을 간단하게 사용하는데는 이 언어가 필요하지 않더라도 말이다.(간단한 장고 프로젝트의 경우가 그렇다.)
 PostgreSQL 웹사이트는 이 데이터베이스를 사용하는데 관한 풍부한 정보를 갖고 있다. 특히나 튜토리얼은 시작에 유용하다. 이미 우분투 패키지를 통해 PostgreSQL를 설치했다면 튜토리얼에서 설치 단계를 생략할 수 있다.
 <!--
@@ -273,7 +271,7 @@ If you are not familiar with SQL you may want to look into this powerful languag
 The PostgreSQL website contains a wealth of information on using this database. In particular, the tutorial is a useful starting point, but you can skip the installation step as you've already installed it using Ubuntu packages.
 -->
 
-## 장애 대응하기 <!-- Troubleshooting -->
+## 장애 대응하기
 ### fe_sendauth: no password supplied
 여러분의 pg_hba.conf가 md5 인증이 원본 호스트, 연결 방법, 요청된 사용자 이름/데이터베이스에 기반한 연결에 사용되게 명시하고 있지만, 여러분의 어플리케이션이 암호를 제공하지 않았다.
 인증 모드를 변경하거나 연결하려는 사용자의 암호를 설정하고 여러분의 어플리케이션 연결 설정에 그 암호를 명시한다.
@@ -408,8 +406,8 @@ The same works with any client that uses libpq (all the PostgreSQL client tools,
 [1] You do not have to pay in order to use PostgreSQL for any application, such as commercial closed source software. See http://www.postgresql.org/about/licence/.
 -->
 
-## 외부 링크들 <!-- External Links -->
-### 공식 PostgreSQL 다운로드 <!--Official PostgreSQL downloads-->
+## 외부 링크들
+### 공식 PostgreSQL 다운로드
 PostgreSQL 프로젝트는 [다운로드 페이지](http://www.postgresql.org/download/)에서 공식적으로 다운로드 가능한 링크 목록을 제공하는데, 우분투 소프트웨어 리파지터리도 여기에 포함된다. 특히, 우분투 사용자는 apt.postgresql.org을 통하여 apt-get을 사용함으로 PostgreSQL 우분투 릴리즈에 패키징된 것들 보다 더 최신 버전을 받을 수 있다.
 
 PostgreSQL에 관한 지원과 서비스는 [서비스와 지원 페이지](http://www.postgresql.org/support/professional_support/)를 보라.
