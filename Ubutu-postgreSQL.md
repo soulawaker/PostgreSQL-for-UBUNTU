@@ -157,7 +157,7 @@ PgAdmin은 완전하게 기능하려면 애드온 설치가 필요하다. "admin
 여러분은 곧바로 사용자 Amarok에게 가서 postgresql을 사용해서 그 음악 카탈로그를 저장하라고 말할 수 있다. 데이터베이스 이름은 amarokdb가 되었을 것이고, 그 사용자 이름은 여러분 소유의 로그인 이름이 되었을 것이며, 'ident sameuser' 덕분에 암호조차 필요가 없어서 암호를 비워둘 수 있다.
 [](You can go right ahead and tell Amarok to use postgresql to store its music catalog. The database name would be amarokdb, the username would be your own login name, and you don't even need a password thanks to 'ident sameuser' so you can leave that blank.)
 
-## pgAdmin III GUI 사용하기 <!--Using pgAdmin III GUI-->
+## pgAdmin III GUI 사용하기
 PostgreSQL가 무엇을 할 수 있는지 알기 위해, 그래픽 기반 클라이언트로 시작해 볼 수 있다. 터미널 창에서 다음을 입력한다.
 <!--To get an idea of what PostgreSQL can do, you may start by firing up a graphical client. In a terminal type :-->
 
